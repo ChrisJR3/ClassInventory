@@ -13,6 +13,7 @@ namespace ClassInventory
     public partial class Form1 : Form
     {
         // TODO - create a List to store all inventory objects
+        List<Player_Info> allPlayers = new List<Player_Info>();
 
         public Form1()
         {
@@ -24,10 +25,17 @@ namespace ClassInventory
             // TODO - gather all information from screen 
 
             // TODO - create object with gathered information
+            Player_Info newPlayer = new Player_Info();
+            newPlayer.name = nameInput.Text;
+            newPlayer.age = ageInput.Text;
+            newPlayer.team = teamInput.Text;
+            newPlayer.position = positionInput.Text;
 
             // TODO - add object to global list
+            allPlayers.Add(newPlayer);
 
             // TODO - display message to indicate addition made
+            outputLabel.Text = "New player added";
         }
 
         private void removeButton_Click(object sender, EventArgs e)
@@ -58,6 +66,11 @@ namespace ClassInventory
             //---------------------------
 
             // TODO - show all objects in list
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
